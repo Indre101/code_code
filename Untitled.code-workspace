@@ -3,5 +3,8 @@
 		{
 			"path": "/Users/zygimantasbutas/Sandbox"
 		}
-	]
+	],
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python3"
+	}
 }
