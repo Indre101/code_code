@@ -1,0 +1,330 @@
+body {
+  background-color: black;
+  font-family: Helvetica;
+  color: seashell;
+  font-size: 22px;
+  opacity: 0.9;
+  display: grid;
+  grid-template-columns: 3.8% repeat(2, 46.2%) 3.8%;
+  grid-template-rows: 69px 700px repeat(2, 200px) 500px 550px 200px 69px;
+  font-weight: bold;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  grid-area: 1/1 / span 1 / span 4;
+  width: 100%;
+  max-width: 1300px;
+  position: fixed;
+  height: 69px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Dropdown Button */
+.dropdownb {
+  display: none;
+}
+
+.logo img {
+  height: 50px;
+  margin-left: 10px;
+}
+
+nav li {
+  display: inline;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+}
+
+.col {
+  position: fixed;
+  text-align: right;
+  justify-content: end;
+}
+
+.container1 {
+  grid-area: 2 /2 / span 1 / span 2;
+  display: grid;
+  background-image: url("img-mission-background.jpg");
+  background-size: 100%;
+  border: 1px solid seashell;
+  width: 100%;
+  height: 700px;
+}
+
+.textoverimage {
+  background-color: black;
+  align-self: center;
+  display: grid;
+  text-align: center;
+}
+
+.textoverimage h4,
+.textoverimage h2 {
+  padding: 0px;
+  margin: 10px;
+}
+
+/* tea of the month part */
+
+.container2 {
+  grid-area: 3/2 / span 1 / span 2;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  margin-top: 60px;
+}
+
+.container3 {
+  grid-area: 4/ 2 / span 2 / span 2;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.container3 img {
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+  align-content: center;
+}
+
+.container4 {
+  grid-area: 6/2 / span 1 / span 2;
+  background-image: url("img-locations-background.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
+
+.loca {
+  text-align: center;
+}
+
+.loca div {
+  background-color: black;
+  flex-wrap: wrap;
+  display: inline-flex;
+  width: 100%;
+  min-width: 300px;
+  opacity: 1;
+  justify-content: center;
+  align-content: center;
+  width: 25%;
+  margin: 15px 40px;
+}
+
+.loca div h3,
+.loca div h4 {
+  text-align: center;
+  padding: 0px 15px;
+  justify-items: center;
+  align-items: center;
+  font-weight: normal;
+}
+
+.loca div h3 {
+  font-weight: bold;
+}
+
+.container5 {
+  grid-area: 6/2 / span 1 / span 2;
+  text-align: center;
+  z-index: 5;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.container7 {
+  grid-area: 7/2 / Span 1 / span 2;
+  text-align: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+}
+
+.container8 {
+  grid-area: 8/1 / Span 1 / span 2;
+  text-align: left;
+  align-content: center;
+  margin: 0px 0px 0px 20px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    grid-template-columns: 3.8% repeat(2, 46.2%) 3.8%;
+    grid-template-rows: 69px 700px repeat(5, 200px) 100px 70px 500px 100px 550px 400px 300px 69px;
+  }
+
+  .container3 {
+    grid-area: 4/ 2 / span 5 / span 2;
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .container4 {
+    grid-area: 12/2 / span 2 / span 2;
+    background-image: url("img-locations-background.jpg");
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .loca div {
+    text-align: center;
+    padding: 0px 5px;
+    justify-items: center;
+    align-items: center;
+    font-weight: normal;
+  }
+  .container5 {
+    grid-area: 11/2 / span 1 / span 2;
+    text-align: center;
+    z-index: 5;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .container7 {
+    grid-area: 14/2 / Span 1 / span 2;
+  }
+
+  .container8 {
+    grid-area: 15/1 / Span 1 / span 2;
+  }
+
+  nav {
+    display: none;
+  }
+  .dropdownb {
+    display: inline-block;
+    position: relative;
+    margin: 10%;
+  }
+  /* Dropdown Button */
+  .dropbtn {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 1em;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdownb:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdownb:hover .dropbtn {
+    background-color: darkgray;
+  }
+}
+
+@media only screen and (max-width: 768px) and (max-height: 1024px) {
+  body {
+    grid-template-columns: 3.8% repeat(2, 46.2%) 3.8%;
+    grid-template-rows: 69px 700px repeat(5, 200px) 100px 70px 500px 100px 550px 550px 250px 69px;
+  }
+
+  .container5 {
+    grid-area: 11/2 / span 2 / span 2;
+  }
+  .container7 {
+    grid-area: 14/2 / Span 1 / span 2;
+  }
+
+  .container8 {
+    grid-area: 15/1 / Span 1 / span 2;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-height: 812px) {
+  header {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .dropdownb {
+    flex-direction: column;
+    padding: 0px;
+    margin: 0%;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body {
+    margin: 0% 5%;
+    grid-template-rows: 69px 700px repeat(5, 200px) 100px 70px 500px 100px 550px 600px 250px 69px;
+  }
+  header {
+    margin: 0%;
+    justify-content: center;
+  }
+
+  .loca div {
+    flex-direction: column;
+    justify-content: center;
+    min-width: 220px;
+  }
+  .dropdown-content {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  dropdown-content {
+    margin-top: 100px;
+  }
+
+  header {
+    justify-content: center;
+  }
+}

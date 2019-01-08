@@ -1,0 +1,89 @@
+body {
+  background: chocolate;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+
+.keybord {
+  display: inline-flex;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.key {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 2rem;
+  min-height: 250px;
+  background: white;
+  border: 2px black solid;
+  box-shadow: 10px 10px;
+  margin: 6px;
+
+}
+
+.sharp {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: seashell;
+  width: 2rem;
+  min-height: 110px;
+  background: black;
+  border: 1px black solid;
+  position: absolute;
+  margin: 6px 2rem;
+}
+
+.together {
+  display: flex;
+}
+
+.words {
+  display: flex;
+  flex-wrap: wrap;
+  width: 27rem;
+  margin: 0 auto;
+  background-color: darkorange;
+
+}
+
+.songwords {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  background-color: white;
+  width: 5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+
+.letter {
+  margin-bottom: 2rem;
+}
+
+.line {
+
+
+  background-color: orangered;
+  border: none;
+  width: 5rem;
+  height: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+
+}
