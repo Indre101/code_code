@@ -13,8 +13,7 @@ function capitalizeASingleWord(word) {
   return firstLetter + restOfWord;
 }
 
-console.log(capitalizeASingleWord('hey'));
-console.log(capitalizeASingleWord(''));
+
 // Should return "Hey"
 console.log("capitalizeASingleWord('hey') returns: " + capitalizeASingleWord('hey'));
 
