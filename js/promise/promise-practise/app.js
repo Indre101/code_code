@@ -3,6 +3,10 @@ const {
 } = require('./library');
 
 let chair = checkAvailabitlity('chair');
-console.log(chair)
 
-checkAvailabitlity.then('Proccesing', 'Failed');
+
+checkAvailabitlity(item).then((resolvedValue) => {
+  return resolvedValue;
+}).then((rejectValue) => {
+  return rejectValue;
+})
