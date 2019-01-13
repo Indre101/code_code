@@ -1,3 +1,10 @@
+let items = {
+  keys: 20,
+  ball: 30,
+  chair: 1,
+  table: 3
+}
+
 const {
   checkAvailabitlity
 } = require('./library');
@@ -5,8 +12,8 @@ const {
 let chair = checkAvailabitlity('chair');
 
 
-checkAvailabitlity(item).then((resolvedValue) => {
+chair.then((resolvedValue) => {
   return resolvedValue;
-}).then((rejectValue) => {
+}).catch((rejectValue) => {
   return rejectValue;
 })

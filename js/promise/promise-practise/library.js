@@ -1,8 +1,5 @@
 const items = {
-  keys: 20,
-  ball: 30,
-  chair: 1,
-  table: 3
+
 }
 
 const checkAvailabitlity = (item) => {
