@@ -10,6 +10,12 @@ let dishes = function () {
   })
 }
 
-dishes().then(function (message) {
-  console.log(message + 'are finished')
+let dusting = function () {
+  return new Promise((resolve, reject) => {
+    resolve('dusting')
+  })
+}
+
+dusting().then(function (message) {
+  console.log(message + ' are finished')
 });
