@@ -1,6 +1,6 @@
 let laundry = function () {
   return new Promise(function (resolve, reject) {
-    resolve(' laundry')
+    resolve('laundry ')
   })
 };
 
@@ -16,6 +16,10 @@ let dusting = function () {
   })
 }
 
-dusting().then(function (message) {
-  console.log(message + ' are finished')
-});
+laundry().then((result) => {
+  return dishes(result)
+}).then((result) => {
+  return dusting(result)
+}).then((result) => {
+  console.log(result + ' finished')
+})
