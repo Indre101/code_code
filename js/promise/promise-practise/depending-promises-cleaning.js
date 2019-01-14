@@ -4,6 +4,12 @@ let laundry = function () {
   })
 };
 
-laundry().then(function (message) {
-  console.log('is finished' + message)
+let dishes = function () {
+  return new Promise((resolve, reject) => {
+    resolve('dishes ')
+  })
+}
+
+dishes().then(function (message) {
+  console.log(message + 'are finished')
 });
