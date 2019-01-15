@@ -26,7 +26,7 @@ buttonMenu.onmouseout = function () {
 
 // colorful side functionality
 
-const colorful = document.getElementById('colorful');
+
 
 let colorArray = ['colorful', 'colorful1', 'colorful2', 'colorful3', 'colorful4', 'colorful5', 'colorful6', 'colorful7', 'colorful8', 'colorful9', 'colorful10', 'colorful11', 'colorful12'];
 let colors = [];
@@ -57,19 +57,13 @@ const changeBack = (event) => {
 
 let mano = function (color) {
 
-  color.onmouseover = function () {
-    changeColor(event);
-  }
+    color.onmouseover = function () {
+      changeColor(event);
+    }
 
 
-  color.onmouseout = function () {
-    setTimeout(() => {
+    color.onmouseout = function () {
       changeBack(event);
-    }, timeout);
-
+    }
   }
-
-
-};
-
-colors.forEach(mano);
+    colors.forEach(mano);
