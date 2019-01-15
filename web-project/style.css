@@ -1,13 +1,15 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 30%, 70%;
+  grid-gap: 1em;
   overflow: auto;
+  font-family: Arial, sans-serif;
+
 
 }
 
-.dropDown {
-  position: fixed;
-}
+/* menu button css */
+.dropDown {}
 
 #menu {
   margin: 1rem;
@@ -22,10 +24,12 @@
 
 .menuList {
   background-color: slategrey;
+  width: 8rem;
   box-shadow: 2px 3px;
   border-radius: 5%;
   z-index: 50;
   margin-left: 2rem;
+  position: absolute;
 
 
 }
@@ -35,7 +39,34 @@
 
 }
 
+/* button css end  */
+
+
 .text,
 .text2 {
   grid-column-start: 2;
+  grid-row-start: 2;
+  height: 70vh;
+}
+
+/* rainbow css */
+
+.blackAndWhite {
+  grid-column-start: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+
+}
+
+.black {
+  background-color: black;
+}
+
+
+/* footer part */
+
+footer {
+  grid-column-start: 2;
+  /* margin-bottom: 4rem; */
 }
