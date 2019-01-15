@@ -1,9 +1,9 @@
 const buttonMenu = document.getElementById('menu');
 const menuContent = document.getElementById('menuContent');
+//const link = document.getElementById('link');
 
 // creating a menu that has a drop down list of options
 menuContent.hidden = true;
-
 
 buttonMenu.onmouseover = function () {
   buttonMenu.style.backgroundColor = '#75B1D7';
@@ -28,11 +28,48 @@ buttonMenu.onmouseout = function () {
 
 const colorful = document.getElementById('colorful');
 
-function randomColor(r, g, b) {
+let colorArray = ['colorful', 'colorful1', 'colorful2', 'colorful3', 'colorful4', 'colorful5', 'colorful6', 'colorful7', 'colorful8', 'colorful9', 'colorful10', 'colorful11', 'colorful12'];
+let colors = [];
 
-  r = Math.floor(Math.random() * 255);
-  g = Math.floor(Math.random() * 255);
-  b = Math.floor(Math.random() * 255);
-  return `${r}${g}{b}`
+colorArray.forEach(function (color) {
+  colors.push(document.getElementById(color));
+})
+
+function randomColor() {
+
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  return `rgb(${r},${g},${b})`
 }
-console.log(randomColor(r, g, b));
+
+
+const changeColor = (event) => {
+  event.target.style.backgroundColor = randomColor();
+  //colorful.style.backgroundColor = 'red';
+}
+
+const changeBack = (event) => {
+  event.target.style.backgroundColor = '';
+}
+
+
+
+let mano = function (color) {
+
+  color.onmouseover = function () {
+    changeColor(event);
+  }
+
+
+  color.onmouseout = function () {
+    setTimeout(() => {
+      changeBack(event);
+    }, timeout);
+
+  }
+
+
+};
+
+colors.forEach(mano);
