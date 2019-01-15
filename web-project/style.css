@@ -4,14 +4,22 @@
 
 }
 
-#menu {
-  height: 2rem;
-  width: 5rem;
-  background-color: aqua;
-  cursor: pointer;
+.dropDown {
   position: fixed;
 }
 
-.menuList {
-  visibility: hidden;
+#menu {
+  height: 2rem;
+  width: 5rem;
+  background-color: #0493C3;
+  cursor: pointer;
+  border-radius: 5%;
+  box-shadow: 2px 3px;
+}
+
+
+.menuList {}
+
+.text {
+  grid-column-start: 2;
 }

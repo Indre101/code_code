@@ -1,8 +1,19 @@
 const buttonMenu = document.getElementById('menu');
 const menuContent = document.getElementById('menuContent');
 
-menuContent.visibility = false;
+menuContent.hidden = true;
 
-buttonMenu.onclick = function () {
-  buttonMenu.style.backgroundColor = 'yellow';
+buttonMenu.onmouseover = function () {
+  buttonMenu.style.backgroundColor = '#75B1D7';
+  menuContent.hidden = false;
+  menuContent.position = 'absolute';
+
+
+
+}
+
+buttonMenu.onmouseout = function () {
+  buttonMenu.style.backgroundColor = '';
+  menuContent.hidden = true;
+
 }
