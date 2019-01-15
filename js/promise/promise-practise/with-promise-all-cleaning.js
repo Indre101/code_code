@@ -19,6 +19,7 @@ let dusting = function (message) {
   })
 }
 
+//if you need at least one of the promise functions done you use Promise.race
 Promise.all([laundry(), dishes(), dusting()]).then(function () {
   console.log('is done');
 })
