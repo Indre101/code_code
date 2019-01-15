@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+#menu {
+  height: 2rem;
+  width: 5rem;
+  background-color: aqua;
+  cursor: pointer;
+  position: fixed;
+}
+
+.menuList {
+  visibility: hidden;
+}
