@@ -27,20 +27,7 @@ buttonMenu.onmouseout = function () {
     menuContent.hidden = true;
   }
 }
-// menu options being highlighted on hover 
-// const aboutMe = document.getElementById('aboutMe');
-// const contact = document.getElementById('contact');
-// const random = document.getElementById('random');
-// const projects = document.getElementById('projects');
 
-// function menuOptionsHighlighted(event) {
-
-//   event.target.style.backgroundColor = 'black'
-// }
-
-// aboutMe.onmouseover = function () {
-//   menuOptionsHighlighted(event)
-// }
 
 const menuItems = ['aboutMe', 'contact', 'random', 'projects'];
 const items = [];
@@ -71,12 +58,8 @@ const menuColorFunction = function (item) {
 
 items.forEach(menuColorFunction);
 
+// menu items are highlighted when mouse is over them done.
 
-
-
-
-
-//
 // colorful side functionality
 
 let colorArray = ['colorful', 'colorful1', 'colorful2', 'colorful3', 'colorful4', 'colorful5', 'colorful6', 'colorful7', 'colorful8', 'colorful9', 'colorful10', 'colorful11', 'colorful12'];
