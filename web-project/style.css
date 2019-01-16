@@ -13,9 +13,9 @@
 
 @keyframes pulse {
   0% {
-    -moz-box-shadow: 3px 3px 5px 6px #ccc;
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-    box-shadow: 3px 3px 5px 6px #ccc;
+    -moz-box-shadow: 5px 5px 8px 7px #ccc;
+    -webkit-box-shadow: 5px 5px 8px 7px #ccc;
+    box-shadow: 5px 5px 8px 7px #ccc;
   }
 
   20% {
@@ -58,18 +58,26 @@
   background-color: slategrey;
   width: 8rem;
   box-shadow: 2px 3px;
-  border-radius: 5%;
   z-index: 50;
   margin-left: 2rem;
   position: absolute;
+  padding: 6px;
+  cursor: pointer;
+
 
 
 }
 
-.menuList div a {
+.menuList div {
+  padding: 8px;
+}
+
+
+.menuList a {
   text-decoration: none;
-
+  color: black;
 }
+
 
 /* button css end  */
 
