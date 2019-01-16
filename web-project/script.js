@@ -5,9 +5,12 @@ const menuContent = document.getElementById('menuContent');
 // creating a menu that has a drop down list of options
 menuContent.hidden = true;
 
+
+
 buttonMenu.onmouseover = function () {
   buttonMenu.style.backgroundColor = '#75B1D7';
   menuContent.hidden = false;
+  
   
 
   menuContent.onmouseover = function () {
