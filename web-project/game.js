@@ -1,0 +1,1 @@
+let spirderman = 'spiderman.jpeg';
