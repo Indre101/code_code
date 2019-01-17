@@ -122,6 +122,24 @@
   width: 100%;
 }
 
+.findSpiderman h2 {
+  margin-bottom: 2rem;
+}
+
+.rules {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  text-align: left;
+  margin-top: 4rem;
+}
+
+.rules li {
+  padding: 1rem;
+  margin-left: 2rem;
+}
+
+
+
 #firstDoor {
   grid-column-start: 2;
   grid-row-start: 2;
