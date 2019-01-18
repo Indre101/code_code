@@ -146,7 +146,7 @@
 #firstDoor,
 #secondDoor,
 #thirdDoor {
-  background-image: url('door.jpg');
+  /* background-image: url('door.jpg'); */
   background-size: contain;
   width: 130px;
   height: 300px;
