@@ -64,8 +64,6 @@
   padding: 6px;
   cursor: pointer;
 
-
-
 }
 
 .menuList div {
@@ -138,12 +136,20 @@
   margin-left: 2rem;
 }
 
-
-
-#firstDoor {
-  grid-column-start: 2;
-  grid-row-start: 2;
+.doors {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+#firstDoor,
+#secondDoor,
+#thirdDoor {
+  background-image: url('door.jpg');
+  width: 200px;
+  height: 400px;
+}
+
+#secondDoor {}
 
 /* footer part */
 
