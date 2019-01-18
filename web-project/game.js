@@ -8,21 +8,27 @@ let secondDoor = document.getElementById('secondDoor');
 let thirdDoor = document.getElementById('thirdDoor');
 let start = document.getElementById('start');
 
+//  start button geting clicked
+const startClicked = () => start.innerHTML = 'Good Luck!';
 
+const notClicked = () => {
+  firstDoor.src = closed;
+  secondDoor.src = closed;
+  thirdDoor.src = closed;
+}
 
-function start() {
+// door opening;
 
-  if (start.onclick) {
+function randomDoors() {
 
-    start.innerHTML = 'Good Luck';
-
-  } else {
-    firstDoor.src = closed;
-    secondDoor.src = closed;
-    thirdDoor.src = closed;
-  }
 
 }
+
+
+
+
+
+
 
 
 

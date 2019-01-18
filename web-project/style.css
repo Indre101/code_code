@@ -160,6 +160,7 @@
   margin: 2rem;
   width: 150px;
   height: 40px;
+  cursor: pointer;
   background-color: #0493C3;
   animation-name: pulse;
   animation-duration: 2s;
