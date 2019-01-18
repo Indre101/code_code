@@ -139,17 +139,18 @@
 .doors {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 4rem;
 }
 
 #firstDoor,
 #secondDoor,
 #thirdDoor {
   background-image: url('door.jpg');
-  width: 200px;
-  height: 400px;
+  background-size: contain;
+  width: 130px;
+  height: 300px;
 }
-
-#secondDoor {}
 
 /* footer part */
 
