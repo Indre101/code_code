@@ -152,6 +152,21 @@
   height: 300px;
 }
 
+
+/* start button */
+
+#start {
+  font-size: 14px;
+  margin: 2rem;
+  width: 150px;
+  height: 40px;
+  background-color: #0493C3;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
 /* footer part */
 
 footer {
