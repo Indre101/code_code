@@ -1,5 +1,6 @@
 let spiderman = 'spiderman.jpg'
-let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
+let building = 'building.jpg';
+let building1 = 'building1.jpg';
 
 
 let firstDoor = document.getElementById('firstDoor');
@@ -9,8 +10,5 @@ let thirdDoor = document.getElementById('thirdDoor');
 
 firstDoor.onclick = function () {
 
-  firstDoor.src = spaceDoorPath;
-
-
-
+  firstDoor.src = building1;
 };
