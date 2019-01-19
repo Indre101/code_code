@@ -13,8 +13,10 @@ buttonMenu.onmouseover = function () {
 
 
 
+
   menuContent.onmouseover = function () {
     menuContent.hidden = false;
+    buttonMenu.style.webkitAnimationPlayState = 'paused'
 
   }
 }
@@ -25,6 +27,8 @@ buttonMenu.onmouseout = function () {
 
   menuContent.onmouseout = function () {
     menuContent.hidden = true;
+    buttonMenu.style.webkitAnimationPlayState = 'running'
+
   }
 }
 
