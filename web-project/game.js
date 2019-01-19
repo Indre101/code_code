@@ -22,18 +22,18 @@ const notClicked = () => {
 
 function randomDoors() {
   const numOfDoors = 3;
-  const randomDoor = Math.floor(Math.random() * 3);
+  let randomDoor = Math.floor(Math.random() * 3);
 
-  switch (door) {
+  switch (randomDoor) {
     case 1:
-      door = spiderman;
-
+      randomDoor = spiderman;
+      return randomDoor;
     case 2:
-      door = building;
-
+      randomDoor = building;
+      return randomDoor;
     default:
-      door = building1;
-      return door;
+      randomDoor = building1;
+      return randomDoor;
   }
 
 }
