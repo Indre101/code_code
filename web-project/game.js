@@ -9,7 +9,10 @@ let thirdDoor = document.getElementById('thirdDoor');
 let start = document.getElementById('start');
 
 //  start button geting clicked
-const startClicked = () => start.innerHTML = 'Good Luck!';
+const startClicked = () => {
+  start.style.webkitAnimationPlayState = 'paused';
+  start.innerHTML = 'Good Luck!';
+}
 
 const notClicked = () => {
   firstDoor.src = closed;
