@@ -19,16 +19,11 @@ const notClicked = () => {
 
 }
 
-const startClicked = () => {
+let startClicked = () => {
 
-  start.onclick = function () {
-    start.style.webkitAnimationPlayState = 'paused';
-    start.innerHTML = 'Good Luck!';
-  }
+  start.style.webkitAnimationPlayState = 'paused';
+  start.innerHTML = 'Good Luck!';
 }
-
-
-notClicked();
 
 // door opening;
 
@@ -50,37 +45,46 @@ function randomDoors() {
 
 }
 
-function isClicked() {
+// function isClicked() {
+//   // startClicked();
 
-  if (!startClicked) {
-    // firstDoor.src = building;
-    notClicked();
-  } else {
-    firstDoor.src = building;
-    //notClicked();
+//   if (start.innerHTML === 'Start!') {
+//     notClicked();
 
-  }
+//   } else {
+//     start.onclick = function () {
+//       startClicked();
+//     }
+
+//   }
+
+//   isClicked();
+
+
+
+function doorChoosing(event) {
+  event.target.src = randomDoors();
 
 }
 
 
+firstDoor.onclick = function () {
+  doorChoosing(event);
+  //firstDoor.src = randomDoors();
+}
 
-isClicked();
+secondDoor.onclick = function () {
+  doorChoosing(event);
+  //firstDoor.src = randomDoors();
+}
 
-// firstDoor.onclick = function (params) {
-//   doorOpened();
+thirdDoor.onclick = function () {
+  doorChoosing(event);
+  //firstDoor.src = randomDoors();
+}
 
-// }
+function checkIfDoorsTheSame(params) {
 
+  if (firstDoor.src = spiderman)
 
-
-
-
-
-
-
-
-// firstDoor.onclick = function () {
-
-//   firstDoor.src = building1;
-// };
+}
