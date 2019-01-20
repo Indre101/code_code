@@ -60,31 +60,59 @@ function randomDoors() {
 
 //   isClicked();
 
+function checkIfDoorsTheSame(event) {
 
-
-function doorChoosing(event) {
   event.target.src = randomDoors();
 
+
+  if (event.target.src === spiderman) {
+    event.target.src = building;
+    event.target.src = building1;
+
+  }
+
+  // if (firstDoor.src === spiderman) {
+  //   secondDoor.src !== spiderman;
+  //   thirdDoor.src !== spiderman;
+  // } else if (secondDoor.src === spiderman) {
+  //   firstDoor.src !== spiderman;
+  //   thirdDoor.src !== spiderman;
+  // } else {
+  //   firstDoor.src !== spiderman;
+  //   secondDoor.src !== spiderman;
+  // }
+
+  // firstDoor.onclick = function () {
+  //   doorChoosing(event);
+  //   //firstDoor.src = randomDoors();
+  // }
+
+  // secondDoor.onclick = function () {
+  //   doorChoosing(event);
+  //   //firstDoor.src = randomDoors();
+  // }
+
+  // thirdDoor.onclick = function () {
+  //   doorChoosing(event);
+  //   //firstDoor.src = randomDoors();
+  // }
 }
 
-
 firstDoor.onclick = function () {
-  doorChoosing(event);
-  //firstDoor.src = randomDoors();
+  checkIfDoorsTheSame(event);
 }
 
 secondDoor.onclick = function () {
-  doorChoosing(event);
-  //firstDoor.src = randomDoors();
+  checkIfDoorsTheSame()
 }
 
 thirdDoor.onclick = function () {
-  doorChoosing(event);
-  //firstDoor.src = randomDoors();
+  checkIfDoorsTheSame()
 }
 
-function checkIfDoorsTheSame(params) {
 
-  if (firstDoor.src = spiderman)
 
-}
+// function doorChoosing(event) {
+
+
+// }
