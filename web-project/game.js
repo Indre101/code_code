@@ -9,17 +9,26 @@ let thirdDoor = document.getElementById('thirdDoor');
 let start = document.getElementById('start');
 
 //  start button geting clicked
-const startClicked = () => {
-  start.style.webkitAnimationPlayState = 'paused';
-  start.innerHTML = 'Good Luck!';
-}
+
+
 
 const notClicked = () => {
   firstDoor.src = closed;
   secondDoor.src = closed;
   thirdDoor.src = closed;
+
 }
 
+const startClicked = () => {
+
+  start.onclick = function () {
+    start.style.webkitAnimationPlayState = 'paused';
+    start.innerHTML = 'Good Luck!';
+  }
+}
+
+
+notClicked();
 
 // door opening;
 
@@ -41,27 +50,27 @@ function randomDoors() {
 
 }
 
-start.onclick = function () {
-  startClicked();
-  firstDoor.src = randomDoors();
+function isClicked() {
+
+  if (!startClicked) {
+    // firstDoor.src = building;
+    notClicked();
+  } else {
+    firstDoor.src = building;
+    //notClicked();
+
+  }
+
 }
 
 
-// function doorOpened() {
-//   if (startClicked()) {
 
-//     firstDoor.src = randomDoors();
-//   } else {
-//     notClicked()
-//   }
+isClicked();
+
+// firstDoor.onclick = function (params) {
+//   doorOpened();
+
 // }
-
-
-
-firstDoor.onclick = function (params) {
-  doorOpened();
-
-}
 
 
 
