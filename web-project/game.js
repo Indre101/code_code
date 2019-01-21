@@ -55,10 +55,24 @@ doors.forEach(function (door) {
 })
 
 //
+function openDoors(event) {
+
+  event.target.src = randomDoors();
+
+}
+
+function open(door) {
+  door.onclick = function () {
+    openDoors(event);
+  }
+}
+
+
+
 
 ///////
 
-newDoor.forEach(doorsFunction);
+newDoor.forEach(open);
 
 
 // function doorChoosing(event) {
