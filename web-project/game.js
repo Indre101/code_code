@@ -54,12 +54,18 @@ doors.forEach(function (door) {
   newDoor.push(document.getElementById(door))
 })
 
-//
+// function to assign a photo
 function openDoors(event) {
 
-  event.target.src = randomDoors();
+  if (event.target.src === closed) {
+    event.target.src = randomDoors();
+  } else {
+    alert('the Door has been opened');
+  }
 
 }
+
+//// function to open the doors on click
 
 function open(door) {
   door.onclick = function () {
@@ -67,14 +73,17 @@ function open(door) {
   }
 }
 
+/////// checking if the doors are clicked
 
 
+///
 
-///////
+
+//// combined function
+
 
 newDoor.forEach(open);
-
-
+//newDoor.forEach(checks);
 // function doorChoosing(event) {
 
 
