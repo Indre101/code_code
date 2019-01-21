@@ -60,56 +60,54 @@ function randomDoors() {
 
 //   isClicked();
 
+const doors = ['firstDoor', 'secondDoor', 'thirdDoor'];
+let newDoor = [];
+
+//
+doors.forEach(function (door) {
+  newDoor.push(document.getElementById(door))
+})
+
+//
+
 function checkIfDoorsTheSame(event) {
 
-  event.target.src = randomDoors();
 
+  event.target.onclick = function () {
+    event.target.src = randomDoors();
 
-  if (event.target.src === spiderman) {
-    event.target.src = building;
-    event.target.src = building1;
+    if (firstDoor.src === spiderman) {
+      secondDoor.src !== spiderman;
+      thirdDoor.src !== spiderman;
+    } else if (secondDoor.src === spiderman) {
+      firstDoor.src !== spiderman;
+      thirdDoor.src !== spiderman;
+    } else {
+      firstDoor.src !== spiderman;
+      secondDoor.src !== spiderman;
+    }
+  }
+}
+//
+////////
+const doorsFunction = (door) => {
+
+  door.onclick = function () {
+    checkIfDoorsTheSame(event);
 
   }
-
-  // if (firstDoor.src === spiderman) {
-  //   secondDoor.src !== spiderman;
-  //   thirdDoor.src !== spiderman;
-  // } else if (secondDoor.src === spiderman) {
-  //   firstDoor.src !== spiderman;
-  //   thirdDoor.src !== spiderman;
-  // } else {
-  //   firstDoor.src !== spiderman;
-  //   secondDoor.src !== spiderman;
-  // }
-
-  // firstDoor.onclick = function () {
-  //   doorChoosing(event);
-  //   //firstDoor.src = randomDoors();
-  // }
-
-  // secondDoor.onclick = function () {
-  //   doorChoosing(event);
-  //   //firstDoor.src = randomDoors();
-  // }
-
-  // thirdDoor.onclick = function () {
-  //   doorChoosing(event);
-  //   //firstDoor.src = randomDoors();
+  // if (door.src === spiderman) {
+  //   firstDoor.src != spiderman;
+  //   secondDoor.src != spiderman;
+  //   thirdDoor.src != spiderman;
   // }
 }
+///////
 
-firstDoor.onclick = function () {
-  checkIfDoorsTheSame(event);
-}
 
-secondDoor.onclick = function () {
-  checkIfDoorsTheSame()
-}
 
-thirdDoor.onclick = function () {
-  checkIfDoorsTheSame()
-}
 
+newDoor.forEach(doorsFunction);
 
 
 // function doorChoosing(event) {
