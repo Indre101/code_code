@@ -45,21 +45,7 @@ function randomDoors() {
 
 }
 
-// function isClicked() {
-//   // startClicked();
-
-//   if (start.innerHTML === 'Start!') {
-//     notClicked();
-
-//   } else {
-//     start.onclick = function () {
-//       startClicked();
-//     }
-
-//   }
-
-//   isClicked();
-
+//
 const doors = ['firstDoor', 'secondDoor', 'thirdDoor'];
 let newDoor = [];
 
@@ -70,42 +56,7 @@ doors.forEach(function (door) {
 
 //
 
-function checkIfDoorsTheSame(event) {
-
-
-  event.target.onclick = function () {
-    event.target.src = randomDoors();
-
-    if (firstDoor.src === spiderman) {
-      secondDoor.src !== spiderman;
-      thirdDoor.src !== spiderman;
-    } else if (secondDoor.src === spiderman) {
-      firstDoor.src !== spiderman;
-      thirdDoor.src !== spiderman;
-    } else {
-      firstDoor.src !== spiderman;
-      secondDoor.src !== spiderman;
-    }
-  }
-}
-//
-////////
-const doorsFunction = (door) => {
-
-  door.onclick = function () {
-    checkIfDoorsTheSame(event);
-
-  }
-  // if (door.src === spiderman) {
-  //   firstDoor.src != spiderman;
-  //   secondDoor.src != spiderman;
-  //   thirdDoor.src != spiderman;
-  // }
-}
 ///////
-
-
-
 
 newDoor.forEach(doorsFunction);
 
