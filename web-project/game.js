@@ -83,6 +83,19 @@ function doorOption(door) {
 
 }
 
+/// function to check that the doors would not have spiderman
+// checking if pressed door have spiderman
+function checkForSpiderman = () => {
+
+  if (firstDoor.src === doorOption(1)) {
+    secondDoor = doorOption(2);
+    third = doorOption(3);
+
+  } else {
+    return false
+  };
+}
+
 /// assignt the photo to the door
 const doorAssign = (event) => {
   event.target.src = doorOption(callingNumber(callingNumber()));
@@ -99,29 +112,26 @@ const noDoubleClicking = (event) => {
 
   if (event.target.src != 'door.jpg') {
     doorAssign(event);
-    theSamePhoto(event)
+    
+    theSamePhoto(event); // two functions called at the same time;
 
   } else {
-    
+
     return false;
   }
 }
 
-/// alerting message if the door was clicked
-// const noClickingMessage = (event) => {
 
-//   if (noDoubleClicking(event) === true) {
-//     doorAssign(event)
-//   } else if (noDoubleClicking(event) === false) {
-//     theSamePhoto(event);
 
-//   }
-// }
+
+
 
 // the onclick function for doors
 
 const bandymas = (door) => {
   door.onclick = function () {
+
+    // door.src = doorOption(1);
     noDoubleClicking(event);
 
   }
