@@ -48,8 +48,10 @@ start.onclick = function () {
 
 
 //
+
 const doors = ['firstDoor', 'secondDoor', 'thirdDoor'];
 let newDoor = [];
+
 
 //
 doors.forEach(function (door) {
@@ -81,29 +83,46 @@ function doorOption(door) {
 
 }
 
+/// assignt the photo to the door
 const doorAssign = (event) => {
   event.target.src = doorOption(callingNumber(callingNumber()));
 
 }
 
-const bandymas = (door) => {
-  door.onclick = function () {
+/// reasigning the doors to stay the same
+const theSamePhoto = (event) => {
+  event.target.style.pointerEvents = 'none';
+}
+
+/// function for checking if door is opened
+const noDoubleClicking = (event) => {
+
+  if (event.target.src != 'door.jpg') {
     doorAssign(event);
+    theSamePhoto(event)
+
+  } else {
+    
+    return false;
   }
 }
 
-/////// checking if the doors are clicked
+/// alerting message if the door was clicked
+// const noClickingMessage = (event) => {
 
+//   if (noDoubleClicking(event) === true) {
+//     doorAssign(event)
+//   } else if (noDoubleClicking(event) === false) {
+//     theSamePhoto(event);
 
-///
-
-
-//// combined function
-
-
-//newDoor.forEach(mano);
-//newDoor.forEach(checks);
-// function doorChoosing(event) {
-
-
+//   }
 // }
+
+// the onclick function for doors
+
+const bandymas = (door) => {
+  door.onclick = function () {
+    noDoubleClicking(event);
+
+  }
+}
