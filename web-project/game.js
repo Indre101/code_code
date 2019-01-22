@@ -40,11 +40,9 @@ const isCliked = () => {
 
 start.onclick = function () {
   isCliked();
+  newDoor.forEach(mano);
+  ////
 }
-
-
-
-
 
 // door opening;
 
@@ -83,24 +81,14 @@ function randomDoors(door) {
 
 }
 
-
-// function to assign a photo
-
-function photo(event) {
-
-
-
-
+const doorAssign = (event) => {
+  event.target.src = randomDoors(randomNumber());
 
 }
 
-
-
-
-//// function to open the doors on click
 const mano = (door) => {
   door.onclick = function () {
-    photo(event);
+    doorAssign(event);
   }
 }
 
@@ -113,7 +101,7 @@ const mano = (door) => {
 //// combined function
 
 
-newDoor.forEach(photo);
+//newDoor.forEach(mano);
 //newDoor.forEach(checks);
 // function doorChoosing(event) {
 
