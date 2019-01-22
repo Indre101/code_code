@@ -13,9 +13,14 @@ let start = document.getElementById('start');
 
 
 const notClicked = () => {
-  firstDoor.src = closed;
-  secondDoor.src = closed;
-  thirdDoor.src = closed;
+
+  if (start.innerHTML === 'Start!') {
+    firstDoor.src = closed;
+    secondDoor.src = closed;
+    thirdDoor.src = closed;
+  } else {
+    return false;
+  }
 
 }
 
@@ -24,6 +29,22 @@ let startClicked = () => {
   start.style.webkitAnimationPlayState = 'paused';
   start.innerHTML = 'Good Luck!';
 }
+
+const isCliked = () => {
+  if (notClicked === true) {
+    return true
+  } else {
+    startClicked();
+  }
+}
+
+start.onclick = function () {
+  isCliked();
+}
+
+
+
+
 
 // door opening;
 
@@ -37,11 +58,15 @@ doors.forEach(function (door) {
   newDoor.push(document.getElementById(door))
 })
 
+// generating random number
 function randomNumber() {
   const numOfDoors = 3;
   let number = Math.floor(Math.random() * 3);
   return number;
 }
+
+
+/// assigning door photo values
 
 function randomDoors(door) {
   switch (door) {
@@ -60,31 +85,23 @@ function randomDoors(door) {
 
 
 // function to assign a photo
-function openDoors(event) {
 
-  if (event.target.src === randomDoors(1)) {
+function photo(event) {
 
-    alert('the Door has been opened');
 
-  }
-  //else {
-  //   event.target.src = randomDoors(2);
-  //   event.target.src = randomDoors(3);
-  // }
+
+
 
 }
 
+
+
+
 //// function to open the doors on click
-
-function open(door) {
+const mano = (door) => {
   door.onclick = function () {
-    door.src = randomDoors();
-
-    //openDoors(event);
+    photo(event);
   }
-  // door.onmouseout = function () {
-  //   door.src = door
-  // }
 }
 
 /////// checking if the doors are clicked
@@ -96,7 +113,7 @@ function open(door) {
 //// combined function
 
 
-newDoor.forEach(open);
+newDoor.forEach(photo);
 //newDoor.forEach(checks);
 // function doorChoosing(event) {
 
