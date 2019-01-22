@@ -27,23 +27,6 @@ let startClicked = () => {
 
 // door opening;
 
-function randomDoors() {
-  const numOfDoors = 3;
-  let randomDoor = Math.floor(Math.random() * 3);
-
-  switch (randomDoor) {
-    case 1:
-      randomDoor = spiderman;
-      return randomDoor;
-    case 2:
-      randomDoor = building;
-      return randomDoor;
-    default:
-      randomDoor = building1;
-      return randomDoor;
-  }
-
-}
 
 //
 const doors = ['firstDoor', 'secondDoor', 'thirdDoor'];
@@ -54,14 +37,40 @@ doors.forEach(function (door) {
   newDoor.push(document.getElementById(door))
 })
 
+function randomNumber() {
+  const numOfDoors = 3;
+  let number = Math.floor(Math.random() * 3);
+  return number;
+}
+
+function randomDoors(door) {
+  switch (door) {
+    case 1:
+      door = spiderman;
+      return door;
+    case 2:
+      door = building;
+      return door;
+    default:
+      door = building1;
+      return door;
+  }
+
+}
+
+
 // function to assign a photo
 function openDoors(event) {
 
-  event.target.src = randomDoors();
+  if (event.target.src === randomDoors(1)) {
 
-  if (event.target.src != 'door.jpg') {
     alert('the Door has been opened');
+
   }
+  //else {
+  //   event.target.src = randomDoors(2);
+  //   event.target.src = randomDoors(3);
+  // }
 
 }
 
@@ -69,8 +78,13 @@ function openDoors(event) {
 
 function open(door) {
   door.onclick = function () {
-    openDoors(event);
+    door.src = randomDoors();
+
+    //openDoors(event);
   }
+  // door.onmouseout = function () {
+  //   door.src = door
+  // }
 }
 
 /////// checking if the doors are clicked
