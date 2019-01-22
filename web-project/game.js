@@ -57,9 +57,9 @@ doors.forEach(function (door) {
 // function to assign a photo
 function openDoors(event) {
 
-  if (event.target.src === closed) {
-    event.target.src = randomDoors();
-  } else {
+  event.target.src = randomDoors();
+
+  if (event.target.src != 'door.jpg') {
     alert('the Door has been opened');
   }
 
