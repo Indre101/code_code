@@ -40,7 +40,7 @@ const isCliked = () => {
 
 start.onclick = function () {
   isCliked();
-  newDoor.forEach(mano);
+  newDoor.forEach(bandymas);
   ////
 }
 
@@ -57,16 +57,16 @@ doors.forEach(function (door) {
 })
 
 // generating random number
-function randomNumber() {
+function callingNumber() {
   const numOfDoors = 3;
-  let number = Math.floor(Math.random() * 3);
-  return number;
+  let generateNumber = Math.floor(Math.random() * 3);
+  return generateNumber;
 }
 
 
 /// assigning door photo values
 
-function randomDoors(door) {
+function doorOption(door) {
   switch (door) {
     case 1:
       door = spiderman;
@@ -82,11 +82,11 @@ function randomDoors(door) {
 }
 
 const doorAssign = (event) => {
-  event.target.src = randomDoors(randomNumber());
+  event.target.src = doorOption(callingNumber(callingNumber()));
 
 }
 
-const mano = (door) => {
+const bandymas = (door) => {
   door.onclick = function () {
     doorAssign(event);
   }
