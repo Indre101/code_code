@@ -58,6 +58,7 @@ doors.forEach(function (door) {
   newDoor.push(document.getElementById(door))
 })
 
+
 // generating random number
 function callingNumber() {
   const numOfDoors = 3;
@@ -83,24 +84,41 @@ function doorOption(door) {
 
 }
 
-/// function to check that the doors would not have spiderman
-// checking if pressed door have spiderman
-function checkForSpiderman = () => {
-
-  if (firstDoor.src === doorOption(1)) {
-    secondDoor = doorOption(2);
-    third = doorOption(3);
-
-  } else {
-    return false
-  };
-}
 
 /// assignt the photo to the door
 const doorAssign = (event) => {
-  event.target.src = doorOption(callingNumber(callingNumber()));
+
+  function oneDoorIsSpiderman() {
+
+    event.target.src = spiderman;
+
+    // if (firstDoor.src != doorOption(1) && secondDoor != doorOption(1)) {
+    //   thirdDoor.src = doorOption(1);
+
+    // } else if (thirdDoor.src != doorOption(1) && secondDoor != doorOption(1)) {
+    //   firstDoor.src = doorOption(1);
+    // } else if (firstDoor.src != doorOption(1) && thirdDoor != doorOption(1)) {
+    //   secondDoor.src = doorOption(1);
+    // }
+
+  }
+
+  function doorPhoto(event) {
+    event.target.src = oneDoorIsSpiderman();
+
+  }
+
+  doorPhoto(event);
+
+
 
 }
+
+
+
+
+
+
 
 /// reasigning the doors to stay the same
 const theSamePhoto = (event) => {
@@ -112,7 +130,7 @@ const noDoubleClicking = (event) => {
 
   if (event.target.src != 'door.jpg') {
     doorAssign(event);
-    
+
     theSamePhoto(event); // two functions called at the same time;
 
   } else {
@@ -124,15 +142,13 @@ const noDoubleClicking = (event) => {
 
 
 
-
-
 // the onclick function for doors
 
 const bandymas = (door) => {
   door.onclick = function () {
 
-    // door.src = doorOption(1);
     noDoubleClicking(event);
+
 
   }
 }
