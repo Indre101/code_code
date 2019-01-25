@@ -95,23 +95,66 @@ function doorOption(door) {
 /// assignt the photo to the door
 const doorAssign = (event) => {
 
-  event.target.src = doorPhotoAssign();
+  function choosingDoor() {
+    let doorArray = ['firstDoor', 'secondDoor', 'thirdDoor'];
 
+    let randomDoor = Math.floor(Math.random() * 3);
 
-
-
-  function doorPhotoAssign() {
-    let photo = doorPhotoAssign(callingNumber(4));
-
-    if (event.target.src === spiderman) {
-      photo = doorOption(callingNumber(3))
-      return photo;
-    } else {
-
-      return photo;
-    }
+    document.getElementById(doorArray[randomDoor]).src = spiderman;
 
   }
+  choosingDoor();
+
+
+  if (event.firstDoor.src === spiderman) {
+    event.secondDoor.src = doorOption(callingNumber(3));
+    event.thirdDoor.src = doorOption(callingNumber(3));
+
+  } else if (event.secondDoor.src === spiderman) {
+    event.firstDoor.src = doorOption(callingNumber(3));
+    event.thirdDoor.src = doorOption(callingNumber(3));
+
+  } else if (event.thirdDoor.src === spiderman) {
+    event.secondDoor.src = doorOption(callingNumber(3));
+    event.firstDoor.src = doorOption(callingNumber(3));
+
+  }
+
+  // event.target.src = doorOption(callingNumber(4));
+
+
+  //   event.secondDoor.src = doorOption(callingNumber(3));
+  //   event.thirdDoor.src = doorOption(callingNumber(3));
+
+  // } else if (randomDoor === 1) {
+  //   document.getElementById(doorArray[randomDoor]).src = spiderman;
+
+  //   event.firstDoor.src = doorOption(callingNumber(3));
+  //   event.thirdDoor.src = doorOption(callingNumber(3));
+  // } else if (randomDoor === 2) {
+  //   document.getElementById(doorArray[randomDoor]).src = spiderman;
+
+  //   event.firstDoor.src = doorOption(callingNumber(3));
+  //   event.secondDoor.src = doorOption(callingNumber(3));
+  // }
+
+
+  // event.target.src = doorPhotoAssign();
+
+  // function doorPhotoAssign() {
+  //   let photo = doorOption(callingNumber(4));
+
+  //   if (event.target.src === spiderman) {
+  //     photo = doorOption(callingNumber(3));
+  //     return photo;
+  //   } else {
+  //     photo = doorOption(callingNumber(4));
+  //     return photo;
+  //   }
+
+  // }
+
+
 
 
   //  function doorPhotoassign() {
