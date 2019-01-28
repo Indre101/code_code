@@ -95,83 +95,18 @@ function doorOption(door) {
 /// assignt the photo to the door
 const doorAssign = (event) => {
 
-  function choosingDoor() {
-    let doorArray = ['firstDoor', 'secondDoor', 'thirdDoor'];
 
-    let randomDoor = Math.floor(Math.random() * 3);
+  //event.target.src = doorOption(callingNumber(4));
+  if (event.target === firstDoor && event.target.src === closed && secondDoor.src != spiderman && thirdDoor.src != spiderman) {
+    //firstDoor.src = spiderman;
+    event.target.src = doorOption(callingNumber(4));
+  } else if (event.target === secondDoor && event.target.src === closed && firstDoor.src != spiderman && thirdDoor.src != spiderman) {
+    event.target.src = doorOption(callingNumber(4));
+    
+  } else if (event.target === thirdDoor && event.target.src === closed && secondDoor.src != spiderman && firstDoor.src != spiderman) {
+    thirdDoor.src = spiderman;
 
-    document.getElementById(doorArray[randomDoor]).src = spiderman;
-
-  }
-  choosingDoor();
-
-
-  if (event.firstDoor.src === spiderman) {
-    event.secondDoor.src = doorOption(callingNumber(3));
-    event.thirdDoor.src = doorOption(callingNumber(3));
-
-  } else if (event.secondDoor.src === spiderman) {
-    event.firstDoor.src = doorOption(callingNumber(3));
-    event.thirdDoor.src = doorOption(callingNumber(3));
-
-  } else if (event.thirdDoor.src === spiderman) {
-    event.secondDoor.src = doorOption(callingNumber(3));
-    event.firstDoor.src = doorOption(callingNumber(3));
-
-  }
-
-  // event.target.src = doorOption(callingNumber(4));
-
-
-  //   event.secondDoor.src = doorOption(callingNumber(3));
-  //   event.thirdDoor.src = doorOption(callingNumber(3));
-
-  // } else if (randomDoor === 1) {
-  //   document.getElementById(doorArray[randomDoor]).src = spiderman;
-
-  //   event.firstDoor.src = doorOption(callingNumber(3));
-  //   event.thirdDoor.src = doorOption(callingNumber(3));
-  // } else if (randomDoor === 2) {
-  //   document.getElementById(doorArray[randomDoor]).src = spiderman;
-
-  //   event.firstDoor.src = doorOption(callingNumber(3));
-  //   event.secondDoor.src = doorOption(callingNumber(3));
-  // }
-
-
-  // event.target.src = doorPhotoAssign();
-
-  // function doorPhotoAssign() {
-  //   let photo = doorOption(callingNumber(4));
-
-  //   if (event.target.src === spiderman) {
-  //     photo = doorOption(callingNumber(3));
-  //     return photo;
-  //   } else {
-  //     photo = doorOption(callingNumber(4));
-  //     return photo;
-  //   }
-
-  // }
-
-
-
-
-  //  function doorPhotoassign() {
-
-  //     if (event.target.src === doorOption(callingNumber()) && firstDoor.src === spiderman) {
-  //       secondDoor = event.target.src = doorOption(callingNumber(3));
-  //       thirdDoor = event.target.src = doorOption(callingNumber(3));
-  //     } else if (event.target.src === doorOption(callingNumber()) && secondDoor.src === spiderman) {
-  //       firstDoor = event.target.src = doorOption(callingNumber(3));
-  //       thirdDoor != event.target.src = doorOption(callingNumber(3));
-  //     } else if (event.target.src === doorOption(callingNumber()) && thirdDoor.src === spiderman) {
-  //       secondDoor != event.target.src = doorOption(callingNumber(3));
-  //       firstDoor != event.target.src = doorOption(callingNumber(3));
-  //     }
-
-  //   }
-
+  } 
 
 }
 
