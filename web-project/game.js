@@ -92,27 +92,29 @@ function doorOption(door) {
 }
 
 
-/// assignt the photo to the door
+/// assign the photo to the door
 const doorAssign = (event) => {
 
-
-  //event.target.src = doorOption(callingNumber(4));
-  if (event.target === firstDoor && event.target.src === closed && secondDoor.src != spiderman && thirdDoor.src != spiderman) {
-    //firstDoor.src = spiderman;
-    event.target.src = doorOption(callingNumber(4));
-  } else if (event.target === secondDoor && event.target.src === closed && firstDoor.src != spiderman && thirdDoor.src != spiderman) {
-    event.target.src = doorOption(callingNumber(4));
-    
-  } else if (event.target === thirdDoor && event.target.src === closed && secondDoor.src != spiderman && firstDoor.src != spiderman) {
-    thirdDoor.src = spiderman;
-
-  } 
-
+  event.target.src = doorOption(callingNumber(4));
 }
 
+/// asssigning spiderman 
 
+function toAssignSpiderman(event) {
+  doorAssign(event);
 
+  if (event.firstDoor.src === spiderman) {
+    event.secondDoor.src = doorOption(callingNumber(3));
+    event.thirdDoor.src = doorOption(callingNumber(3));
+  } else if (event.secondDoor.src === spiderman) {
+    event.firstDoor.src = doorOption(callingNumber(3));
+    event.thirdDoor.src = doorOption(callingNumber(3));
+  } else {
+    // (event.target === thirdDoor && secondDoor != spiderman && firstDoor.src != spiderman) {
+    event.thirdDoor.src = spiderman;
+  }
 
+}
 
 
 
@@ -122,11 +124,19 @@ const theSamePhoto = (event) => {
   event.target.style.pointerEvents = 'none';
 }
 
+
+
+
+
 /// function for checking if door is opened
 const noDoubleClicking = (event) => {
 
+
+
   if (event.target.src != 'door.jpg') {
     doorAssign(event);
+
+    //toAssignSpiderman(event);
 
     theSamePhoto(event); // two functions called at the same time;
 
