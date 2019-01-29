@@ -26,16 +26,15 @@ const notStarted = () => {
 
   if (startButton.innerHTML === 'Start!') {
 
-    currentlyPlaying = true;
+    return true;
   } else {
-    console.log('heyyyy')
 
-    currentlyPlaying = false;
+    return false;
   }
 
 }
 
-notStarted();
+
 
 let startClicked = () => {
 
@@ -53,9 +52,9 @@ startButton.onclick = function () {
 function isSpiderman(door) {
 
   if (door.src === spiderman) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -65,6 +64,7 @@ function isItOpen(door) {
   if (door.src === closed) {
     return true;
   } else {
+    //door.style.pointerEvents = 'none';
     return false;
   }
 }
@@ -72,17 +72,7 @@ function isItOpen(door) {
 
 /// checking if all doors are isItOpen
 
-function areAllOpen(door) {
 
-  numOfClosedDoors--;
-
-  if (numOfClosedDoors === 0) {
-    start.innerHTML = 'You Win! Play again?'
-  } else {
-    start.innerHTML = 'You Loose! Play again?'
-
-  }
-}
 /// assigning dooors
 
 function radomPhotoToDoors(maxNumberToEnter) {
@@ -137,3 +127,73 @@ function openDoors(door) {
 
   }
 }
+
+
+
+
+
+firstDoor.onclick = function () {
+  if (!notStarted() && !isItOpen(firstDoor)) {
+
+    firstDoor.src = door1;
+
+    //openDoors(door1);
+    //isSpiderman(door1);
+    areAllOpen(door1);
+
+  }
+}
+
+secondDoor.onclick = function () {
+  if (!notStarted() && !isItOpen(secondDoor)) {
+
+    secondDoor.src = door2;
+
+
+    // openDoors(door2);
+    // isSpiderman(door2);
+    areAllOpen(door2);
+
+  }
+}
+
+thirdDoor.onclick = function () {
+  if (!notStarted() && !isItOpen(thirdDoor)) {
+
+    thirdDoor.src = door3;
+
+    areAllOpen(door3);
+
+    // openDoors(door3);
+    //isSpiderman(door3);
+  }
+}
+
+
+
+// function startOver() {
+//   firstDoor.src = closed;
+//   secondDoor.src = closed;
+//   thirdDoor.src = closed;
+//   startButton.innerHTML = 'Good Luck';
+//   playingTheGame();
+
+// }
+
+// function areAllOpen(door) {
+
+//   numOfClosedDoors--;
+
+//   if (numOfClosedDoors === 1) {
+//     start.innerHTML = 'You Win! Play again?'
+//   } else {
+//     start.innerHTML = 'You Loose! Play again?'
+
+//   }
+
+//   // startButton.onclick = function () {
+
+//   //   startOver();
+
+//   // }
+// }
