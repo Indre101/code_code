@@ -13,50 +13,77 @@ let numOfClosedDoors = 3;
 let firstDoor = document.getElementById('firstDoor');
 let secondDoor = document.getElementById('secondDoor');
 let thirdDoor = document.getElementById('thirdDoor');
-let start = document.getElementById('start');
+let startButton = document.getElementById('start');
+let currentlyPlaying = true;
+
+
 
 //  start button geting clicked
 
 
 
-const notClicked = () => {
+const notStarted = () => {
 
-  if (start.innerHTML === 'Start!') {
-    firstDoor.src = closed;
-    secondDoor.src = closed;
-    thirdDoor.src = closed;
+  if (startButton.innerHTML === 'Start!') {
+
+    currentlyPlaying = true;
   } else {
-    return false;
+    console.log('heyyyy')
+
+    currentlyPlaying = false;
   }
 
 }
+
+notStarted();
 
 let startClicked = () => {
 
-  start.style.webkitAnimationPlayState = 'paused';
-  start.innerHTML = 'Good Luck!';
-  // beginTheGame();
+  startButton.style.webkitAnimationPlayState = 'paused';
+  startButton.innerHTML = 'Good Luck!';
 
-  // noDoubleClicking(event);
 }
 
-const isCliked = () => {
-  if (notClicked() === true) {
-    return true
+startButton.onclick = function () {
+  startClicked();
+}
+
+// door functionality
+
+function isSpiderman(door) {
+
+  if (door.src === spiderman) {
+    return true;
   } else {
-    startClicked();
+    return false;
   }
 }
 
-start.onclick = function () {
-  isCliked();
-  ////
+
+function isItOpen(door) {
+
+  if (door.src === closed) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-// door opening;
 
-// assigning different pictures to numbers
+/// checking if all doors are isItOpen
 
+function areAllOpen(door) {
+
+  numOfClosedDoors--;
+
+  if (numOfClosedDoors === 0) {
+    start.innerHTML = 'You Win! Play again?'
+  } else {
+    start.innerHTML = 'You Loose! Play again?'
+
+  }
+}
+/// assigning dooors
 
 function radomPhotoToDoors(maxNumberToEnter) {
 
@@ -109,44 +136,4 @@ function openDoors(door) {
 
 
   }
-}
-
-function gamePlay(door) {
-  numOfClosedDoors--;
-
-  if ()
-
-}
-
-/// nodouble clicking
-
-// function noDoubleClicking(event) {
-
-//   event.target.style.pointerEvent = 'none';
-
-// }
-
-////////////////////
-
-firstDoor.onclick = function () {
-
-  door1 = firstDoor;
-  openDoors(door1);
-
-
-}
-
-secondDoor.onclick = function () {
-
-  door2 = secondDoor;
-  openDoors(door2);
-
-
-}
-
-
-thirdDoor.onclick = function () {
-  door3 = thirdDoor;
-
-  openDoors(door3);
 }
