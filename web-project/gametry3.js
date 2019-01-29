@@ -34,7 +34,10 @@ const notStarted = () => {
 
 }
 
+function noDoubleClicking(event) {
+  event.target.style.pointerEvents = 'none';
 
+}
 
 let startClicked = () => {
 
@@ -45,7 +48,7 @@ let startClicked = () => {
 
 startButton.onclick = function () {
   startClicked();
-  // startGame();
+  openDoors();
 }
 
 // door functionality
@@ -78,9 +81,8 @@ function areAllOpen(door) {
 
   if (numOfClosedDoors === 0) {
     start.innerHTML = 'You Win! Play again?'
-  } else if (isSpiderman(door)) {
+  } else if (isSpiderman(door) === true) {
     start.innerHTML = 'You Loose! Play again?'
-    isSpiderman(door1);
 
 
   }
@@ -151,6 +153,7 @@ firstDoor.onclick = function () {
 
     firstDoor.src = door1;
     areAllOpen(door1);
+    noDoubleClicking(event);
 
 
   }
@@ -162,6 +165,8 @@ secondDoor.onclick = function () {
     secondDoor.src = door2;
 
     areAllOpen(door2);
+    noDoubleClicking(event);
+
 
   }
 }
@@ -172,8 +177,7 @@ thirdDoor.onclick = function () {
     thirdDoor.src = door3;
 
     areAllOpen(door3);
+    noDoubleClicking(event);
 
   }
 }
-
-openDoors();
