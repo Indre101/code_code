@@ -45,6 +45,7 @@ let startClicked = () => {
 
 startButton.onclick = function () {
   startClicked();
+  // startGame();
 }
 
 // door functionality
@@ -52,9 +53,9 @@ startButton.onclick = function () {
 function isSpiderman(door) {
 
   if (door.src === spiderman) {
-    return false;
-  } else {
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -71,7 +72,19 @@ function isItOpen(door) {
 
 
 /// checking if all doors are isItOpen
+function areAllOpen(door) {
 
+  numOfClosedDoors--;
+
+  if (numOfClosedDoors === 0) {
+    start.innerHTML = 'You Win! Play again?'
+  } else if (isSpiderman(door)) {
+    start.innerHTML = 'You Loose! Play again?'
+    isSpiderman(door1);
+
+
+  }
+}
 
 /// assigning dooors
 
@@ -100,28 +113,28 @@ function radomPhotoToDoors(maxNumberToEnter) {
 
 //door opening with photos
 
-function openDoors(door) {
+function openDoors() {
 
   let randomScenario = Math.floor(Math.random() * 3);
 
   if (randomScenario === 0) {
 
-    door1.src = spiderman;
-    door2.src = radomPhotoToDoors(3);
-    door3.src = radomPhotoToDoors(3);
+    door1 = spiderman;
+    door2 = radomPhotoToDoors(3);
+    door3 = radomPhotoToDoors(3);
 
 
-  } else if (randomScenario === 1) {
-    door1.src = radomPhotoToDoors(3);
-    door2.src = spiderman;
-    door3.src = radomPhotoToDoors(3);
+  } else if (randomScenario === 0) {
+    door1 = radomPhotoToDoors(3);
+    door2 = spiderman;
+    door3 = radomPhotoToDoors(3);
 
 
-  } else if (randomScenario === 2) {
+  } else {
 
-    door1.src = radomPhotoToDoors(3);
-    door2.src = radomPhotoToDoors(3);
-    door3.src = spiderman;
+    door1 = radomPhotoToDoors(3);
+    door2 = radomPhotoToDoors(3);
+    door3 = spiderman;
     //event.target.style.pointerEvent = 'none';
 
 
@@ -132,14 +145,13 @@ function openDoors(door) {
 
 
 
+
 firstDoor.onclick = function () {
   if (!notStarted() && !isItOpen(firstDoor)) {
 
     firstDoor.src = door1;
-
-    //openDoors(door1);
-    //isSpiderman(door1);
     areAllOpen(door1);
+
 
   }
 }
@@ -149,9 +161,6 @@ secondDoor.onclick = function () {
 
     secondDoor.src = door2;
 
-
-    // openDoors(door2);
-    // isSpiderman(door2);
     areAllOpen(door2);
 
   }
@@ -164,36 +173,7 @@ thirdDoor.onclick = function () {
 
     areAllOpen(door3);
 
-    // openDoors(door3);
-    //isSpiderman(door3);
   }
 }
 
-
-
-// function startOver() {
-//   firstDoor.src = closed;
-//   secondDoor.src = closed;
-//   thirdDoor.src = closed;
-//   startButton.innerHTML = 'Good Luck';
-//   playingTheGame();
-
-// }
-
-// function areAllOpen(door) {
-
-//   numOfClosedDoors--;
-
-//   if (numOfClosedDoors === 1) {
-//     start.innerHTML = 'You Win! Play again?'
-//   } else {
-//     start.innerHTML = 'You Loose! Play again?'
-
-//   }
-
-//   // startButton.onclick = function () {
-
-//   //   startOver();
-
-//   // }
-// }
+openDoors();
