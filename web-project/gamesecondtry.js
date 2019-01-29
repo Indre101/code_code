@@ -4,6 +4,7 @@ let building1 = 'building1.jpg';
 let building2 = 'building3.jpg';
 
 let closed = 'door.jpg'
+let numOfClosedDoors = 3;
 
 let firstDoor = document.getElementById('firstDoor');
 let secondDoor = document.getElementById('secondDoor');
@@ -33,7 +34,7 @@ let startClicked = () => {
 }
 
 const isCliked = () => {
-  if (notClicked === true) {
+  if (notClicked() === true) {
     return true
   } else {
     startClicked();
@@ -76,10 +77,32 @@ function radomPhotoToDoors(maxNumberToEnter) {
 //door opening with photos
 
 function openDoors(event) {
-  event.target.src = radomPhotoToDoors(3)
-  event.target.style.pointerEvents = 'none';
-};
+  // event.target.style.pointerEvents = 'none';
 
-firstDoor.onclick = function () {
-  openDoors(event);
+
+
+}
+////////////////////
+
+function openingOfTheDoors() {
+
+
+  firstDoor.onclick = function () {
+    openDoors(event);
+  }
+
+  secondDoor.onclick = function () {
+
+    openDoors(event);
+
+
+  }
+
+
+  thirdDoor.onclick = function () {
+
+    openDoors(event);
+
+
+  }
 }
