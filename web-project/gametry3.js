@@ -49,18 +49,13 @@ let startClicked = () => {
 startButton.onclick = function () {
   startClicked();
   openDoors();
+
+
 }
 
 // door functionality
 
-function isSpiderman(door) {
 
-  if (door.src === spiderman) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 
 function isItOpen(door) {
@@ -74,15 +69,34 @@ function isItOpen(door) {
 }
 
 
+function isSpiderman(door) {
+
+  if (door.src === spiderman) {
+    // console.log('true')
+    return true;
+  } else {
+    console.log('false');
+    return false;
+
+  }
+
+
+}
+
+
+
+
+
 /// checking if all doors are isItOpen
 function areAllOpen(door) {
 
   numOfClosedDoors--;
 
-  if (numOfClosedDoors === 0) {
-    start.innerHTML = 'You Win! Play again?'
-  } else if (isSpiderman(door) === true) {
-    start.innerHTML = 'You Loose! Play again?'
+  if (isSpiderman(door)) {
+    start.innerHTML = 'You Loose! Play again?';
+  } else if (numOfClosedDoors === 0) {
+    start.innerHTML = 'You Win! Play again?';
+
 
 
   }
@@ -152,7 +166,10 @@ firstDoor.onclick = function () {
   if (!notStarted() && !isItOpen(firstDoor)) {
 
     firstDoor.src = door1;
-    areAllOpen(door1);
+
+    areAllOpen(firstDoor);
+    //isSpiderman(firstDoor);
+
     noDoubleClicking(event);
 
 
@@ -164,7 +181,9 @@ secondDoor.onclick = function () {
 
     secondDoor.src = door2;
 
-    areAllOpen(door2);
+    areAllOpen(secondDoor);
+    //  isSpiderman(secondDoor);
+
     noDoubleClicking(event);
 
 
@@ -176,7 +195,9 @@ thirdDoor.onclick = function () {
 
     thirdDoor.src = door3;
 
-    areAllOpen(door3);
+    areAllOpen(thirdDoor);
+    // isSpiderman(thirdDoor);
+
     noDoubleClicking(event);
 
   }
