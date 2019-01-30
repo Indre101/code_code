@@ -48,8 +48,10 @@ let startClicked = () => {
 
 startButton.onclick = function () {
   startClicked();
-  openDoors();
-
+  // startGame();
+  // isSpiderman(firstDoor);
+  // isSpiderman(secondDoor);
+  // isSpiderman(thirdDoor);
 
 }
 
@@ -75,7 +77,7 @@ function isSpiderman(door) {
     // console.log('true')
     return true;
   } else {
-    console.log('false');
+    //console.log('false');
     return false;
 
   }
@@ -174,6 +176,7 @@ firstDoor.onclick = function () {
 
 
   }
+
 }
 
 secondDoor.onclick = function () {
@@ -202,3 +205,19 @@ thirdDoor.onclick = function () {
 
   }
 }
+
+function startGame() {
+
+  firstDoor.src = closed;
+  secondDoor.src = closed;
+  thirdDoor.src = closed;
+  openDoors();
+  notStarted();
+  numClosedDoors = 3;
+  // isSpiderman(firstDoor);
+  // isSpiderman(secondDoor);
+  // isSpiderman(thirdDoor);
+
+}
+
+startGame()
