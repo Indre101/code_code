@@ -14,7 +14,6 @@ let firstDoor = document.getElementById('firstDoor');
 let secondDoor = document.getElementById('secondDoor');
 let thirdDoor = document.getElementById('thirdDoor');
 let startButton = document.getElementById('start');
-let currentlyPlaying = true;
 
 
 
@@ -48,10 +47,8 @@ let startClicked = () => {
 
 startButton.onclick = function () {
   startClicked();
-  // startGame();
-  // isSpiderman(firstDoor);
-  // isSpiderman(secondDoor);
-  // isSpiderman(thirdDoor);
+  //startGame();
+
 
 }
 
@@ -71,7 +68,7 @@ function isItOpen(door) {
 }
 
 
-function isSpiderman(door) {
+function isTheDoorWrong(door) {
 
   if (door.src === spiderman) {
     // console.log('true')
@@ -94,13 +91,11 @@ function areAllOpen(door) {
 
   numOfClosedDoors--;
 
-  if (isSpiderman(door)) {
-    start.innerHTML = 'You Loose! Play again?';
+  if (isTheDoorWrong(door) === true) {
+    gameOver()
+
   } else if (numOfClosedDoors === 0) {
-    start.innerHTML = 'You Win! Play again?';
-
-
-
+    gameOver('win');
   }
 }
 
@@ -170,7 +165,6 @@ firstDoor.onclick = function () {
     firstDoor.src = door1;
 
     areAllOpen(firstDoor);
-    //isSpiderman(firstDoor);
 
     noDoubleClicking(event);
 
@@ -199,11 +193,25 @@ thirdDoor.onclick = function () {
     thirdDoor.src = door3;
 
     areAllOpen(thirdDoor);
-    // isSpiderman(thirdDoor);
 
     noDoubleClicking(event);
 
   }
+}
+
+// start.onclick = function () {
+//   if (!notStarted) {
+//     startGame();
+//   }
+// }
+
+const gameOver = (status) => {
+  if (status === 'win') {
+    startButton.innerHTML = 'You win! Play again?';
+  } else {
+    startButton.innerHTML = 'Game over! play again?'
+  }
+  notStarted() = false;
 }
 
 function startGame() {
@@ -212,11 +220,8 @@ function startGame() {
   secondDoor.src = closed;
   thirdDoor.src = closed;
   openDoors();
-  notStarted();
-  numClosedDoors = 3;
-  // isSpiderman(firstDoor);
-  // isSpiderman(secondDoor);
-  // isSpiderman(thirdDoor);
+  notStarted() = true;
+  numOfClosedDoors = 3;
 
 }
 
