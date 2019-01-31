@@ -14,7 +14,7 @@ let firstDoor = document.getElementById('firstDoor');
 let secondDoor = document.getElementById('secondDoor');
 let thirdDoor = document.getElementById('thirdDoor');
 let startButton = document.getElementById('start');
-
+let currentPlay = true;
 
 //  start button geting clicked
 
@@ -47,6 +47,7 @@ let startClicked = () => {
 startButton.onclick = function () {
   startClicked();
 
+  openDoors();
 
 
 }
@@ -155,11 +156,10 @@ function openDoors() {
 
 
 
-openDoors();
 
 
 firstDoor.onclick = function () {
-  if (!notStarted() && !isItOpen(firstDoor)) {
+  if (currentPlay && !isItOpen(firstDoor)) {
 
     firstDoor.src = door1;
 
@@ -173,7 +173,7 @@ firstDoor.onclick = function () {
 }
 
 secondDoor.onclick = function () {
-  if (!notStarted() && !isItOpen(secondDoor)) {
+  if (currentPlay && !isItOpen(secondDoor)) {
 
     secondDoor.src = door2;
 
@@ -187,7 +187,7 @@ secondDoor.onclick = function () {
 }
 
 thirdDoor.onclick = function () {
-  if (!notStarted() && !isItOpen(thirdDoor)) {
+  if (currentPlay && !isItOpen(thirdDoor)) {
 
     thirdDoor.src = door3;
 
@@ -204,9 +204,16 @@ const gameOver = (status) => {
     startButton.innerHTML = 'You win! Play again?';
   } else {
     startButton.innerHTML = 'Game over! play again?'
-    notStarted() = true;
   }
+  currentPlay = false;
 }
+
+// const startOver() {
+
+//   if (startButton.innerHTML === 'Game over! play again?') {
+
+//   }
+// }
 
 
 
