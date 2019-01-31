@@ -1,4 +1,4 @@
-let spiderman = 'spiderman.jpg'
+let spiderman = 'spiderman.jpg';
 let building = 'building.jpg';
 let building1 = 'building1.jpg';
 let building2 = 'building3.jpg';
@@ -14,7 +14,6 @@ let firstDoor = document.getElementById('firstDoor');
 let secondDoor = document.getElementById('secondDoor');
 let thirdDoor = document.getElementById('thirdDoor');
 let startButton = document.getElementById('start');
-
 
 
 //  start button geting clicked
@@ -47,7 +46,7 @@ let startClicked = () => {
 
 startButton.onclick = function () {
   startClicked();
-  //startGame();
+
 
 
 }
@@ -67,14 +66,15 @@ function isItOpen(door) {
   }
 }
 
-
 function isTheDoorWrong(door) {
 
-  if (door.src === spiderman) {
-    // console.log('true')
+  console.log("door", door.getAttribute("src"), door.src, spiderman);
+
+  if (door.getAttribute("src") === spiderman) {
+    console.log('true');
     return true;
   } else {
-    //console.log('false');
+    console.log('false');
     return false;
 
   }
@@ -82,22 +82,20 @@ function isTheDoorWrong(door) {
 
 }
 
-
-
-
-
 /// checking if all doors are isItOpen
 function areAllOpen(door) {
 
   numOfClosedDoors--;
 
-  if (isTheDoorWrong(door) === true) {
+  if (numOfClosedDoors === 0) {
+    gameOver('win');
+  } else if (isTheDoorWrong(door)) {
     gameOver()
 
-  } else if (numOfClosedDoors === 0) {
-    gameOver('win');
   }
 }
+
+
 
 /// assigning dooors
 
@@ -137,7 +135,7 @@ function openDoors() {
     door3 = radomPhotoToDoors(3);
 
 
-  } else if (randomScenario === 0) {
+  } else if (randomScenario === 1) {
     door1 = radomPhotoToDoors(3);
     door2 = spiderman;
     door3 = radomPhotoToDoors(3);
@@ -157,6 +155,7 @@ function openDoors() {
 
 
 
+openDoors();
 
 
 firstDoor.onclick = function () {
@@ -199,30 +198,16 @@ thirdDoor.onclick = function () {
   }
 }
 
-// start.onclick = function () {
-//   if (!notStarted) {
-//     startGame();
-//   }
-// }
 
 const gameOver = (status) => {
   if (status === 'win') {
     startButton.innerHTML = 'You win! Play again?';
   } else {
     startButton.innerHTML = 'Game over! play again?'
+    notStarted() = true;
   }
-  notStarted() = false;
 }
 
-function startGame() {
 
-  firstDoor.src = closed;
-  secondDoor.src = closed;
-  thirdDoor.src = closed;
-  openDoors();
-  notStarted() = true;
-  numOfClosedDoors = 3;
 
-}
-
-startGame()
+// startGame()
