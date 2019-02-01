@@ -19,7 +19,7 @@ let currentPlay = true;
 //  start button geting clicked
 
 const notStarted = () => {
-  if (currentPlay === true) {
+  if (currentPlay === false || startButton.innerHTML === "Start!") {
     return true;
   } else {
     return false;
@@ -110,7 +110,7 @@ function openDoors() {
 }
 
 firstDoor.onclick = function() {
-  if (notStarted() && !isItOpen(firstDoor)) {
+  if (!notStarted() && !isItOpen(firstDoor)) {
     firstDoor.src = door1;
 
     areAllOpen(firstDoor);
@@ -120,7 +120,7 @@ firstDoor.onclick = function() {
 };
 
 secondDoor.onclick = function() {
-  if (notStarted() && !isItOpen(secondDoor)) {
+  if (!notStarted() && !isItOpen(secondDoor)) {
     secondDoor.src = door2;
 
     areAllOpen(secondDoor);
@@ -130,7 +130,7 @@ secondDoor.onclick = function() {
 };
 
 thirdDoor.onclick = function() {
-  if (notStarted() && !isItOpen(thirdDoor)) {
+  if (!notStarted() && !isItOpen(thirdDoor)) {
     thirdDoor.src = door3;
 
     areAllOpen(thirdDoor);
@@ -148,27 +148,42 @@ const gameOver = status => {
   // startButton.innerHTML = "Start!";
   currentPlay = false;
 };
+/// closed doors
 
-function startOver() {
-  firstDoor.src = closed;
-  // console.log(firstDoor.src);
-  secondDoor.src = closed;
-  thirdDoor.src = closed;
-  currentPlay = true;
+// function closedDoors() {
+//   if (startButton.innerHTML === "Start!") {
+//     firstDoor.src = closed;
+//     // console.log(firstDoor.src);
+//     secondDoor.src = closed;
+//     thirdDoor.src = closed;
+//   } else {
+//     return false;
+//   }
+// }
+// //const isItOpen = door => door.src === closed && true;
+// closedDoors();
 
-  openDoors();
-  numOfClosedDoors = 3;
-}
-
-startOver();
+// function startOver() {
+//   firstDoor.src = closed;
+//   // console.log(firstDoor.src);
+//   secondDoor.src = closed;
+//   thirdDoor.src = closed;
+//   // currentPlay = true;
+//   // numOfClosedDoors = 3;
+// }
+// startOver();
 
 startButton.onclick = function() {
   startClicked();
-  if (
-    !notStarted()
-    // startButton.innerHTML === "You win! Play again?" ||
-    // startButton.innerHTML === "Game over! play again?"
-  ) {
-    startOver();
-  }
+  openDoors();
+
+  //startOver();
+  //openDoors();
+  // if (
+  //   !notStarted()
+  //   // startButton.innerHTML === "You win! Play again?" ||
+  //   // startButton.innerHTML === "Game over! play again?"
+  // ) {
+  //   startOver();
+  // }
 };
