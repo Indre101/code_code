@@ -159,6 +159,9 @@ function startOver() {
   thirdDoor.src = closed;
   currentPlay = true;
   numOfClosedDoors = 3;
+  firstDoor.style.pointerEvents = "auto";
+  secondDoor.style.pointerEvents = "auto";
+  thirdDoor.style.pointerEvents = "auto";
 }
 
 startButton.onclick = function() {
