@@ -115,7 +115,9 @@ firstDoor.onclick = function() {
 
     areAllOpen(firstDoor);
 
-    noDoubleClicking(event);
+    if (firstDoor.getAttribute("src") != closed) {
+      noDoubleClicking(event);
+    }
   }
 };
 
@@ -150,40 +152,24 @@ const gameOver = status => {
 };
 /// closed doors
 
-// function closedDoors() {
-//   if (startButton.innerHTML === "Start!") {
-//     firstDoor.src = closed;
-//     // console.log(firstDoor.src);
-//     secondDoor.src = closed;
-//     thirdDoor.src = closed;
-//   } else {
-//     return false;
-//   }
-// }
-// //const isItOpen = door => door.src === closed && true;
-// closedDoors();
-
-// function startOver() {
-//   firstDoor.src = closed;
-//   // console.log(firstDoor.src);
-//   secondDoor.src = closed;
-//   thirdDoor.src = closed;
-//   // currentPlay = true;
-//   // numOfClosedDoors = 3;
-// }
-// startOver();
+function startOver() {
+  firstDoor.src = closed;
+  // console.log(firstDoor.src);
+  secondDoor.src = closed;
+  thirdDoor.src = closed;
+  currentPlay = true;
+  numOfClosedDoors = 3;
+}
 
 startButton.onclick = function() {
   startClicked();
   openDoors();
 
-  //startOver();
-  //openDoors();
-  // if (
-  //   !notStarted()
-  //   // startButton.innerHTML === "You win! Play again?" ||
-  //   // startButton.innerHTML === "Game over! play again?"
-  // ) {
-  //   startOver();
-  // }
+  if (
+    notStarted()
+    // startButton.innerHTML === "You win! Play again?" ||
+    // startButton.innerHTML === "Game over! play again?"
+  ) {
+    startOver();
+  }
 };
