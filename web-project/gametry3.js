@@ -1,62 +1,43 @@
-let spiderman = 'spiderman.jpg';
-let building = 'building.jpg';
-let building1 = 'building1.jpg';
-let building2 = 'building3.jpg';
+let spiderman = "spiderman.jpg";
+let building = "building.jpg";
+let building1 = "building1.jpg";
+let building2 = "building3.jpg";
 
 let door1;
 let door2;
 let door3;
 
-let closed = 'door.jpg'
+let closed = "door.jpg";
 let numOfClosedDoors = 3;
 
-let firstDoor = document.getElementById('firstDoor');
-let secondDoor = document.getElementById('secondDoor');
-let thirdDoor = document.getElementById('thirdDoor');
-let startButton = document.getElementById('start');
+let firstDoor = document.getElementById("firstDoor");
+let secondDoor = document.getElementById("secondDoor");
+let thirdDoor = document.getElementById("thirdDoor");
+let startButton = document.getElementById("start");
 let currentPlay = true;
 
 //  start button geting clicked
 
-
-
-// const notStarted = () => {
-
-//   if (startButton.innerHTML === 'Start!') {
-
-//     return true;
-//   } else {
-
-//     return false;
-//   }
-
-// }
+const notStarted = () => {
+  if (currentPlay === true) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 function noDoubleClicking(event) {
-  event.target.style.pointerEvents = 'none';
-
+  event.target.style.pointerEvents = "none";
 }
 
-let startClicked = () => {
-
-  startButton.style.webkitAnimationPlayState = 'paused';
-  startButton.innerHTML = 'Good Luck!';
-
-}
-
-// startButton.onclick = function () {
-//   startClicked();
-//   openDoors();
-
-
-
-// }
+const startClicked = () => {
+  startButton.style.webkitAnimationPlayState = "paused";
+  startButton.innerHTML = "Good Luck!";
+};
 
 // door functionality
 
-
 function isItOpen(door) {
-
   if (door.src === closed) {
     return true;
   } else {
@@ -66,37 +47,27 @@ function isItOpen(door) {
 }
 
 function isTheDoorWrong(door) {
-
-
   if (door.getAttribute("src") === spiderman) {
     return true;
   } else {
     return false;
-
   }
-
-
 }
 
 /// checking if all doors are isItOpen
 function areAllOpen(door) {
-
   numOfClosedDoors--;
 
   if (numOfClosedDoors === 0) {
-    gameOver('win');
+    gameOver("win");
   } else if (isTheDoorWrong(door)) {
-    gameOver()
-
+    gameOver();
   }
 }
-
-
 
 /// assigning dooors
 
 function radomPhotoToDoors(maxNumberToEnter) {
-
   let numberOfThePhoto = Math.floor(Math.random() * maxNumberToEnter);
 
   switch (numberOfThePhoto) {
@@ -115,93 +86,68 @@ function radomPhotoToDoors(maxNumberToEnter) {
     default:
       return spiderman;
       break;
-  };
+  }
 }
 
 //door opening with photos
 
 function openDoors() {
-
   let randomScenario = Math.floor(Math.random() * 3);
 
   if (randomScenario === 0) {
-
     door1 = spiderman;
     door2 = radomPhotoToDoors(3);
     door3 = radomPhotoToDoors(3);
-
-
   } else if (randomScenario === 1) {
     door1 = radomPhotoToDoors(3);
     door2 = spiderman;
     door3 = radomPhotoToDoors(3);
-
-
   } else {
-
     door1 = radomPhotoToDoors(3);
     door2 = radomPhotoToDoors(3);
     door3 = spiderman;
-    //event.target.style.pointerEvent = 'none';
-
-
   }
 }
 
-
-
-
-
-
-firstDoor.onclick = function () {
-  if (currentPlay && !isItOpen(firstDoor)) {
-
+firstDoor.onclick = function() {
+  if (notStarted() && !isItOpen(firstDoor)) {
     firstDoor.src = door1;
 
     areAllOpen(firstDoor);
 
     noDoubleClicking(event);
-
-
   }
+};
 
-}
-
-secondDoor.onclick = function () {
-  if (currentPlay && !isItOpen(secondDoor)) {
-
+secondDoor.onclick = function() {
+  if (notStarted() && !isItOpen(secondDoor)) {
     secondDoor.src = door2;
 
     areAllOpen(secondDoor);
-    //  isSpiderman(secondDoor);
 
     noDoubleClicking(event);
-
-
   }
-}
+};
 
-thirdDoor.onclick = function () {
-  if (currentPlay && !isItOpen(thirdDoor)) {
-
+thirdDoor.onclick = function() {
+  if (notStarted() && !isItOpen(thirdDoor)) {
     thirdDoor.src = door3;
 
     areAllOpen(thirdDoor);
 
     noDoubleClicking(event);
-
   }
-}
+};
 
-
-const gameOver = (status) => {
-  if (status === 'win') {
-    startButton.innerHTML = 'You win! Play again?';
+const gameOver = status => {
+  if (status === "win") {
+    startButton.innerHTML = "You win! Play again?";
   } else {
-    startButton.innerHTML = 'Game over! play again?'
+    startButton.innerHTML = "Game over! play again?";
   }
+  // startButton.innerHTML = "Start!";
   currentPlay = false;
-}
+};
 
 function startOver() {
   firstDoor.src = closed;
@@ -212,16 +158,17 @@ function startOver() {
 
   openDoors();
   numOfClosedDoors = 3;
-
-}
-
-startButton.onclick = function () {
-  startClicked();
-
-  if (!currentPlay) {
-    startOver();
-
-  }
 }
 
 startOver();
+
+startButton.onclick = function() {
+  startClicked();
+  if (
+    !notStarted()
+    // startButton.innerHTML === "You win! Play again?" ||
+    // startButton.innerHTML === "Game over! play again?"
+  ) {
+    startOver();
+  }
+};
